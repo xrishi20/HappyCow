@@ -9,6 +9,7 @@ module.exports = {
       dPurple: "#44337A",
       red: "#F44336",
       green: "#2E7D32",
+      yellow: "#fc0",
       dGray: "#444444",
       mGray: "#616161",
       lGray: "#777777",
