@@ -25,26 +25,68 @@
     <!-- Mobile Nav -->
     <div
       id="darkBG"
-      class="w-full h-screen absolute top-0 left-0 bg-black bg-opacity-25 z-10 lg:hidden transform opacity-0 pointer-events-none"
+      class="w-full h-screen fixed top-0 left-0 bg-black bg-opacity-25 lg:hidden transform opacity-0 pointer-events-none z-30"
     ></div>
     <!-- Purple Nav Bar -->
     <div
       id="mNav"
-      class="w-64 flex flex-col items-center h-screen pt-16 absolute top-0 left-0 bg-purple text-white z-10 lg:hidden transform -translate-x-full transition-transform duration-500"
+      class="w-64 flex flex-col items-center h-screen pt-16 fixed top-0 left-0 bg-purple text-white lg:hidden transform -translate-x-full transition-transform duration-500 z-40 overflow-y-scroll pb-6"
     >
-      <a href="javascript:void(0)" class="mNavLink">
+      <a onclick="rEShow()" href="javascript:void(0)" class="mNavLink">
         Restaurants & Stores
         <span class="text-xs pl-1">
           <i class="fa fa-chevron-down"></i>
         </span>
       </a>
+      <div id="rExpand" class="w-full bg-dPurple px-6 hidden">
+        <a class="py-2 w-full flex border-b border-white" href=""
+          >B&B Retreats</a
+        >
+        <a class="py-2 w-full flex border-b border-white" href=""
+          >Add a Listing</a
+        >
+        <a class="py-2 w-full flex border-b border-white" href=""
+          >Update Listing</a
+        >
+        <a class="py-2 w-full flex border-b border-white" href=""
+          >Write Review</a
+        >
+        <a class="py-2 w-full flex border-b border-white" href=""
+          >Upgrade my Listing</a
+        >
+        <a class="py-2 w-full flex border-b border-white" href="">Search</a>
+        <a class="py-2 w-full flex" href="">Mobile Version</a>
+      </div>
 
-      <a href="javascript:void(0)" class="mNavLink">
+      <a onclick="vtEShow()" href="javascript:void(0)" class="mNavLink">
         Veg Topics
         <span class="text-xs pl-1">
           <i class="fa fa-chevron-down"></i>
         </span>
       </a>
+      <div id="vTExpand" class="w-full bg-dPurple px-6 hidden">
+        <a class="py-2 w-full flex border-b border-white" href="">Forum</a>
+        <a class="py-2 w-full flex border-b border-white" href="">Recipes</a>
+        <a class="py-2 w-full flex border-b border-white" href="">Travel</a>
+        <a class="py-2 w-full flex border-b border-white" href="">Health</a>
+        <a class="py-2 w-full flex border-b border-white" href=""
+          >Going Vegan</a
+        >
+        <a class="py-2 w-full flex border-b border-white" href=""
+          >Veg Protien</a
+        >
+        <a class="py-2 w-full flex border-b border-white" href="">Famous Veg</a>
+        <a class="py-2 w-full flex border-b border-white" href="">Humour</a>
+        <a class="py-2 w-full flex border-b border-white" href="">VegIQ Test</a>
+        <a class="py-2 w-full flex border-b border-white" href=""
+          >Vegitarianism</a
+        >
+        <a class="py-2 w-full flex border-b border-white" href="">Raw Food</a>
+        <a class="py-2 w-full flex border-b border-white" href=""
+          >Environment</a
+        >
+        <a class="py-2 w-full flex" href="">All Topics</a>
+      </div>
 
       <a href="#" class="mNavLink"> Community </a>
 
@@ -60,7 +102,7 @@
     </div>
 
     <nav
-      class="relative w-full flex justify-between px-6 xl:px-12 border-b-4 border-purple z-20 bg-white"
+      class="relative w-full flex justify-between px-6 xl:px-12 border-b-4 border-purple z-40 bg-white"
     >
       <div class="flex items-center">
         <!-- Logo & Menu Button -->
@@ -590,8 +632,8 @@
     ></div>
     <div
       id="login"
-      class="fixed transform -translate-x-1/2 -translate-y-1/2 z-50 max-w-3xl w-full px-6 opacity-0 pointer-events-none transition-opacity duration-300"
-      style="top: 50%; left: 50%"
+      class="absolute transform -translate-x-1/2 z-50 max-w-3xl w-full px-6 opacity-0 pointer-events-none transition-opacity duration-300"
+      style="top: 6rem; left: 50%"
     >
       <div
         class="flex flex-col-reverse md:flex-row bg-white rounded-lg shadow-2xl overflow-hidden"
@@ -756,6 +798,20 @@
         lBG.classList.add("pointer-events-none");
         login.classList.add("opacity-0");
         login.classList.add("pointer-events-none");
+      }
+
+      //Nav Expands
+      var rExp = document.querySelector('#rExpand');
+      var vtExp = document.querySelector('#vTExpand');
+
+      function rEShow() {
+        rExp.classList.toggle('hidden');
+        vtExp.classList.add('hidden');
+      }
+
+      function vtEShow() {
+        vtExp.classList.toggle('hidden');
+        rExp.classList.add('hidden');
       }
     </script>
     <script
