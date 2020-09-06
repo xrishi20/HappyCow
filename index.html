@@ -1,11 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/tailwind.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      *:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+      }
+
+      .nav-drop {
+        display: none;
+      }
+
+      #nav-link:hover .nav-drop {
+        display: block !important;
+      }
+
+      header {
+        background-image: url("./assets/images/mainBG.webp");
+      }
+
+      header h1 {
+        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.85);
+      }
+    </style>
     <title>Happy Cow</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body class="font-nunito antialiased text-mGray">
+    <nav
+      class="w-full flex justify-between px-6 xl:px-12 border-b-4 border-purple"
+    >
+      <div class="flex items-center">
+        <!-- Logo -->
+        <a class="flex-shrink-0 py-2 mr-3" href="www.happycow.net">
+          <img class="h-8 xl:h-10" src="./assets/images/logo.svg" alt="logo" />
+        </a>
+        <!-- Desktop List -->
+        <ul class="lg:flex items-center h-full hidden text-sm xl:text-base z-20">
+          <li
+            id="nav-link"
+            class="h-full relative border-t-4 border-white hover:border-dPurple hover:bg-purple hover:text-white"
+          >
+            <a
+              class="h-full flex items-center font-extrabold px-3"
+              href="javascript:void(0)"
+              >Restaurants & Stores
+              <span class="text-xs pl-1">
+                <i class="fa fa-chevron-down"></i>
+              </span>
+            </a>
+            <div
+              class="bg-purple w-full px-4 absolute bottom-0 left-0 transform translate-y-full nav-drop"
+            >
+              <div class="grid grid-cols-1 text-white">
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >B&B Retreats</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Add a Listing</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Update Listing</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Write Review</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Upgrade my Listing</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Search</a
+                >
+                <a class="py-2 w-full flex" href="">Mobile Version</a>
+              </div>
+            </div>
+          </li>
+          <li
+            id="nav-link"
+            class="h-full relative border-t-4 border-white hover:border-dPurple hover:bg-purple hover:text-white"
+          >
+            <a
+              class="h-full flex items-center font-extrabold px-3"
+              href="javascript:void(0)"
+              >Veg Topics
+              <span class="text-xs pl-1">
+                <i class="fa fa-chevron-down"></i>
+              </span>
+            </a>
+            <div
+              class="bg-purple w-48 px-4 absolute bottom-0 left-0 transform translate-y-full nav-drop"
+            >
+              <div class="grid grid-cols-1 text-white">
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Forum</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Recipes</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Travel</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Health</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Going Vegan</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Veg Protien</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Famous Veg</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Humour</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >VegIQ Test</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Vegitarianism</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Raw Food</a
+                >
+                <a class="py-2 w-full flex border-b border-white" href=""
+                  >Environment</a
+                >
+                <a class="py-2 w-full flex" href="">All Topics</a>
+              </div>
+            </div>
+          </li>
+          <li class="h-full">
+            <a
+              class="flex items-center border-t-4 h-full border-transparent font-extrabold hover:text-dGray px-3"
+              href=""
+              >Community</a
+            >
+          </li>
+          <li class="h-full">
+            <a
+              class="flex items-center border-t-4 h-full border-transparent font-extrabold hover:text-dGray px-3"
+              href=""
+              >Blog</a
+            >
+          </li>
+          <li class="h-full">
+            <a
+              class="flex items-center border-t-4 h-full border-transparent font-extrabold hover:text-dGray px-3"
+              href=""
+              >Feed the Cow</a
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- CTA(s) -->
+      <div class="flex items-center py-2">
+        <button
+          class="text-xs md:text-base px-3 py-2 rounded-md focus:outline-none border border-purple font-extrabold text-purple mr-2 hidden sm:flex"
+        >
+          Add Listing
+        </button>
+        <button
+          class="text-xs md:text-base px-3 py-2 rounded-md focus:outline-none border border-purple bg-purple hover:bg-opacity-75 font-extrabold text-white"
+        >
+          Login / Join
+        </button>
+      </div>
+    </nav>
+
+    <header
+      class="relative w-full flex flex-col items-center px-6 pt-24 pb-32 bg-cover bg-no-repeat bg-center overflow-hidden"
+    >
+      <h1
+        class="text-3xl md:text-4xl leading-tight text-white font-extrabold mb-4 text-center"
+      >
+        Find Vegan Restaurants Nearby
+      </h1>
+      <form action="" class="flex max-w-4xl w-full mx-auto">
+        <input
+          class="bg-white rounded-l-md py-2 px-4 flex-1"
+          type="text"
+          placeholder="Search for city,region or zipcode"
+        />
+        <button
+          class="relative p-2 h-12 w-12 bg-purple rounded-r-md flex justify-center items-center"
+        >
+          <span class="text-white text-xl"><i class="fa fa-search"></i></span>
+          <input
+            class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
+            type="submit"
+          />
+        </button>
+      </form>
+      <svg
+        class="absolute bottom-0 left-0 w-full transform translate-y-1/2 scale-105 pointer-events-none"
+        width="5144"
+        height="348"
+        viewBox="0 0 5144 348"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5144 0.815759V348H2V186C2 186 277.973 14.8382 1252.38 0.815759C2226.78 -13.2067 2831.22 158.249 3679.64 154.016C4528.06 149.782 5144 0.815759 5144 0.815759Z"
+          fill="white"
+        />
+      </svg>
+      <p
+        class="absolute bottom-0 right-0 pb-16 pr-8 text-white text-opacity-50 text-xs font-extrabold"
+      >
+        Photo by Rustic Vegan
+      </p>
+    </header>
+
+    <article class="w-full bg-white max-w-screen-xl px-6 py-12 mx-auto">
+      <div class="flex justify-between items-baseline">
+        <h3 class="text-2xl md:text-3xl text-dGray font-extrabold capitalize">
+          Vegan food near me
+        </h3>
+        <a class="text-purple font-extrabold hidden md:flex items-center" href="#">
+          View All
+          <span class="text-xs pl-2">
+            <i class="fa fa-chevron-right"></i>
+          </span>
+        </a>
+      </div>
+      <a class="text-purple text-xs rounded-full px-1 -ml-1" href="javascript:void(0)">
+        <span class="pr-1"><i class="fa fa-location-arrow"></i></span>
+        Use my location</a>
+    </article>
+  </body>
 </html>
