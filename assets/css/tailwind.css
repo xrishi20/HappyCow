@@ -614,6 +614,29 @@ video {
   }
 }
 
+.mNavLink {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: left;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  border-bottom-width: 1px;
+  border-style: dashed;
+  --border-opacity: 1;
+  border-color: #FFFFFF;
+  border-color: rgba(255, 255, 255, var(--border-opacity));
+  --border-opacity: 0.5;
+}
+
+.mNavLink:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
 .space-y-0 > :not(template) ~ :not(template) {
   --space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--space-y-reverse)));

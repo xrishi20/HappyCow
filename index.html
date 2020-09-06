@@ -12,41 +12,75 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <style>
-      *:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-      }
-
-      .nav-drop {
-        display: none;
-      }
-
-      #nav-link:hover .nav-drop {
-        display: block !important;
-      }
-
-      header {
-        background-image: url("./assets/images/mainBG.webp");
-      }
-
-      header h1 {
-        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.85);
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/css/global.css" />
     <title>Happy Cow</title>
   </head>
   <body class="font-nunito antialiased text-mGray">
+    <!-- Mobile Nav -->
+    <div
+      id="darkBG"
+      class="w-full h-screen absolute top-0 left-0 bg-black bg-opacity-25 z-10 lg:hidden transform opacity-0 pointer-events-none"
+    ></div>
+    <!-- Purple Nav Bar -->
+    <div
+      id="mNav"
+      class="w-64 flex flex-col items-center h-screen pt-16 absolute top-0 left-0 bg-purple text-white z-10 lg:hidden transform -translate-x-full transition-transform duration-500"
+    >
+      <a href="javascript:void(0)" class="mNavLink">
+        Restaurants & Stores
+        <span class="text-xs pl-1">
+          <i class="fa fa-chevron-down"></i>
+        </span>
+      </a>
+
+      <a href="javascript:void(0)" class="mNavLink">
+        Veg Topics
+        <span class="text-xs pl-1">
+          <i class="fa fa-chevron-down"></i>
+        </span>
+      </a>
+
+      <a href="#" class="mNavLink"> Community </a>
+
+      <a href="#" class="mNavLink"> Blog </a>
+
+      <a href="#" class="mNavLink"> Feed the Cow </a>
+
+      <button
+        class="px-6 py-3 bg-white rounded-md text-purple font-extrabold mt-6 focus:outline-none sm:hidden"
+      >
+        Add Listing
+      </button>
+    </div>
+
     <nav
-      class="w-full flex justify-between px-6 xl:px-12 border-b-4 border-purple"
+      class="relative w-full flex justify-between px-6 xl:px-12 border-b-4 border-purple z-20 bg-white"
     >
       <div class="flex items-center">
-        <!-- Logo -->
-        <a class="flex-shrink-0 py-2 mr-3" href="www.happycow.net">
-          <img class="h-8 xl:h-10" src="./assets/images/logo.svg" alt="logo" />
-        </a>
+        <!-- Logo & Menu Button -->
+        <div class="flex items-center -ml-8 lg:ml-0">
+          <div class="flex lg:hidden">
+            <button
+              class="hamburger hamburger--squeeze transform scale-50"
+              type="button"
+            >
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+          <a class="flex-shrink-0 py-2 mr-3 -ml-3" href="www.happycow.net">
+            <img
+              class="h-8 xl:h-10"
+              src="./assets/images/logo.svg"
+              alt="logo"
+            />
+          </a>
+        </div>
         <!-- Desktop List -->
-        <ul class="lg:flex items-center h-full hidden text-sm xl:text-base z-20">
+        <ul
+          class="lg:flex items-center h-full hidden text-sm xl:text-base z-20"
+        >
           <li
             id="nav-link"
             class="h-full relative border-t-4 border-white hover:border-dPurple hover:bg-purple hover:text-white"
@@ -172,7 +206,7 @@
           Add Listing
         </button>
         <button
-          class="text-xs md:text-base px-3 py-2 rounded-md focus:outline-none border border-purple bg-purple hover:bg-opacity-75 font-extrabold text-white"
+          class="text-xs md:text-base px-3 py-2 rounded-md focus:outline-none border border-purple bg-purple lg:hover:bg-opacity-75 font-extrabold text-white"
         >
           Login / Join
         </button>
@@ -223,21 +257,50 @@
       </p>
     </header>
 
-    <article class="w-full bg-white max-w-screen-xl px-6 py-12 mx-auto">
+    <article class="w-full bg-white max-w-6xl px-6 py-12 mx-auto">
       <div class="flex justify-between items-baseline">
         <h3 class="text-2xl md:text-3xl text-dGray font-extrabold capitalize">
           Vegan food near me
         </h3>
-        <a class="text-purple font-extrabold hidden md:flex items-center" href="#">
+        <a
+          class="text-purple font-extrabold hidden md:flex items-center"
+          href="#"
+        >
           View All
           <span class="text-xs pl-2">
             <i class="fa fa-chevron-right"></i>
           </span>
         </a>
       </div>
-      <a class="text-purple text-xs rounded-full px-1 -ml-1" href="javascript:void(0)">
+      <a
+        class="text-purple text-xs rounded-full px-1 -ml-1"
+        href="javascript:void(0)"
+      >
         <span class="pr-1"><i class="fa fa-location-arrow"></i></span>
-        Use my location</a>
+        Use my location</a
+      >
     </article>
+
+    <script>
+      // Look for .hamburger
+      var hamburger = document.querySelector(".hamburger");
+      var darkBG = document.querySelector("#darkBG");
+      var mNav = document.querySelector("#mNav");
+      // On click
+      hamburger.addEventListener("click", function () {
+        // Toggle class "is-active"
+        hamburger.classList.toggle("is-active");
+        darkBG.classList.toggle("opacity-0");
+        darkBG.classList.toggle("pointer-events-none");
+        mNav.classList.toggle("-translate-x-full");
+      });
+
+      darkBG.addEventListener('click', () => {
+        hamburger.classList.remove("is-active");
+        darkBG.classList.add("opacity-0");
+        darkBG.classList.add("pointer-events-none");
+        mNav.classList.add("-translate-x-full");
+      })
+    </script>
   </body>
 </html>

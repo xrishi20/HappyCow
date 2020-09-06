@@ -2,4 +2,12 @@
 
 @tailwind components;
 
+.mNavLink {
+    @apply w-full py-4 px-6 text-left font-extrabold flex items-center border-b border-dashed border-white border-opacity-50;
+}
+
+.mNavLink:focus {
+    @apply outline-none shadow-outline;
+}
+
 @tailwind utilities;
