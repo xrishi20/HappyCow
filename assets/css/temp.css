@@ -10,4 +10,8 @@
     @apply outline-none shadow-outline;
 }
 
+.wRButton {
+    @apply h-10 w-10 bg-white shadow-md rounded-full flex justify-center items-center text-purple;
+}
+
 @tailwind utilities;

@@ -12,11 +12,11 @@
   display: block !important;
 }
 
-header {
+header.landing {
   background-image: url("../images/mainBG.webp");
 }
 
-header h1 {
+header.landing h1 {
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.85);
 }
 
@@ -150,6 +150,11 @@ header h1 {
   padding-top: 56.25% !important;
 }
 
+.square {
+  position: relative !important;
+  padding-top: 100% !important;
+}
+
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -218,5 +223,15 @@ header h1 {
 
 .login-options {
   background-image: url("../images/login-social.jpg");
+}
+
+.prev {
+  top: 50%;
+  left: 0;
+}
+
+.next {
+  top: 50%;
+  right: 0;
 }
 /*# sourceMappingURL=global.css.map */
