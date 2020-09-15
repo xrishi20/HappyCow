@@ -16,11 +16,13 @@
     <title>Happy Cow</title>
   </head>
   <body class="font-nunito antialiased text-mGray">
-    <!-- Mobile Nav -->
+    <!-- Dark Background -->
     <div
       id="darkBG"
-      class="w-full h-screen fixed top-0 left-0 bg-black bg-opacity-25 lg:hidden transform opacity-0 pointer-events-none z-30"
+      onclick="hide()"
+      class="w-full h-screen fixed top-0 left-0 bg-black bg-opacity-25 transform opacity-0 pointer-events-none z-30"
     ></div>
+    
     <!-- Purple Nav Bar -->
     <div
       id="mNav"
@@ -243,6 +245,12 @@
       <!-- CTA(s) -->
       <div class="flex items-center py-2">
         <button
+          onclick="Search()"
+          class="text-xl h-8 w-8 rounded-full focus:outline-none text-purple mr-4"
+        >
+          <i class="fa fa-search"></i>
+        </button>
+        <button
           class="text-xs md:text-base px-3 py-2 rounded-md focus:outline-none border border-purple font-extrabold text-purple mr-2 hidden sm:flex"
         >
           Add Listing
@@ -255,6 +263,69 @@
         </button>
       </div>
     </nav>
+
+    <!-- Search Overlay -->
+    <div
+      id="searchOverlay"
+      class="fixed w-full h-screen top-0 left-0 bg-white z-50 py-8 hidden"
+    >
+      <div class="max-w-6xl w-full mx-auto px-6">
+        <!-- Heading & Cross -->
+        <div class="flex justify-between mb-4">
+          <h1
+            class="text-2xl md:text-3xl mr-3 font-extrabold leading-none text-dGray"
+          >
+            Search Happy Cow
+          </h1>
+          <button
+            onclick="hideS()"
+            class="text-xl h-8 w-8 rounded-full focus:outline-none text-dGray mr-4"
+          >
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+        <!-- Categories -->
+        <div class="flex flex-wrap -ml-3 text-sm mb-4">
+          <button class="mx-3 my-1 font-extrabold text-purple">All</button>
+          <button class="mx-3 my-1 font-extrabold text-dGray hover:text-purple">
+            Cities
+          </button>
+          <button class="mx-3 my-1 font-extrabold text-dGray hover:text-purple">
+            Business
+          </button>
+          <button class="mx-3 my-1 font-extrabold text-dGray hover:text-purple">
+            Famous
+          </button>
+          <button class="mx-3 my-1 font-extrabold text-dGray hover:text-purple">
+            Recipes
+          </button>
+          <button class="mx-3 my-1 font-extrabold text-dGray hover:text-purple">
+            Forum
+          </button>
+        </div>
+        <!-- Searh Input -->
+        <form class="w-full relative">
+          <input
+            class="w-full border border-lGray border-opacity-50 py-3 pl-3 pr-32 rounded-md"
+            placeholder="Search all"
+            type="text"
+          />
+          <div class="absolute top-0 right-0 h-full p-2">
+            <button
+              class="relative bg-purple rounded-md text-white flex items-center py-1 px-3 h-full overflow-hidden"
+            >
+              <i class="fa fa-search mr-2"></i>
+              <span class="font-extrabold text-lg">Search</span>
+              <input
+                class="absolute top-0 left-0 w-full h-full bg-transparent cursor-pointer"
+                type="submit"
+                value=""
+              />
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <header class="relative w-full flex overflow-hidden bg-vPurple">
       <div class="max-w-6xl w-full mx-auto px-6 py-4">
@@ -476,7 +547,9 @@
                 <i class="fa fa-pencil"></i>
               </span>
             </a>
-            <p class="pt-2 text-purple md:text-white font-extrabold text-sm">Updates</p>
+            <p class="pt-2 text-purple md:text-white font-extrabold text-sm">
+              Updates
+            </p>
           </div>
           <!-- Fav. -->
           <div class="flex flex-col items-center">
@@ -485,7 +558,9 @@
                 <i class="fa fa-star-o"></i>
               </span>
             </a>
-            <p class="pt-2 text-purple md:text-white font-extrabold text-sm">Favourite</p>
+            <p class="pt-2 text-purple md:text-white font-extrabold text-sm">
+              Favourite
+            </p>
           </div>
           <!-- Trip -->
           <div class="flex flex-col items-center">
@@ -494,7 +569,9 @@
                 <i class="fa fa-plane"></i>
               </span>
             </a>
-            <p class="pt-2 text-purple md:text-white font-extrabold text-sm">Trip</p>
+            <p class="pt-2 text-purple md:text-white font-extrabold text-sm">
+              Trip
+            </p>
           </div>
           <!-- Share -->
           <div class="flex flex-col items-center">
@@ -503,30 +580,37 @@
                 <i class="fa fa-share"></i>
               </span>
             </a>
-            <p class="pt-2 text-purple md:text-white font-extrabold text-sm">Share</p>
+            <p class="pt-2 text-purple md:text-white font-extrabold text-sm">
+              Share
+            </p>
           </div>
         </div>
         <!-- Map -->
         <div class="w-full rect-16-9 bg-lGray z-10 mb-4"></div>
         <!-- Tag -->
-        <span class="py-1 px-2 rounded-md bg-yellow text-black font-extrabold text-sm ml-2">Take-Out</span>
+        <span
+          class="py-1 px-2 rounded-md bg-yellow text-black font-extrabold text-sm ml-2"
+          >Take-Out</span
+        >
         <!-- List -->
-        <div class="flex flex-col pl-2 py-4 border-b border-lGray border-opacity-50">
+        <div
+          class="flex flex-col pl-2 py-4 border-b border-lGray border-opacity-50"
+        >
           <!-- List Item -->
           <div class="flex text-sm mb-4">
-            <span class="w-16 mr-3 font-extrabold text-black">
-              Features
-            </span>
+            <span class="w-16 mr-3 font-extrabold text-black"> Features </span>
             <ul class="flex-1 flex flex-col">
-              <li class="flex-1"><i class="fa fa-check text-green pr-2"></i>Outdoor Seatings</li>
-              <li class="flex-1"><i class="fa fa-check text-green pr-2"></i>Accepts Credit Cards</li>
+              <li class="flex-1">
+                <i class="fa fa-check text-green pr-2"></i>Outdoor Seatings
+              </li>
+              <li class="flex-1">
+                <i class="fa fa-check text-green pr-2"></i>Accepts Credit Cards
+              </li>
             </ul>
           </div>
           <!-- List Item -->
           <div class="flex text-sm mb-4">
-            <span class="w-16 mr-3 font-extrabold text-black">
-              Price
-            </span>
+            <span class="w-16 mr-3 font-extrabold text-black"> Price </span>
             <div class="flex pt-1 text-xl">
               <i class="fa fa-dollar pr-1 text-yellow"></i>
               <i class="fa fa-dollar pr-1 text-yellow"></i>
@@ -535,9 +619,7 @@
           </div>
           <!-- List Item -->
           <div class="flex text-sm mb-4">
-            <span class="w-16 mr-3 font-extrabold text-black">
-              Website
-            </span>
+            <span class="w-16 mr-3 font-extrabold text-black"> Website </span>
             <a class="text-purple" href="#">website.com</a>
           </div>
         </div>
@@ -545,11 +627,6 @@
     </article>
 
     <!-- Login -->
-    <div
-      id="loginBG"
-      onclick="loginHide()"
-      class="fixed top-0 left-0 w-full h-screen bg-black bg-opacity-25 z-40 opacity-0 pointer-events-none transition-opacity duration-100"
-    ></div>
     <div
       id="login"
       class="absolute transform -translate-x-1/2 z-50 max-w-3xl w-full px-6 opacity-0 pointer-events-none transition-opacity duration-300"
@@ -620,7 +697,7 @@
         >
           <!-- Cross -->
           <button
-            onclick="loginHide()"
+            onclick="hide()"
             class="flex justify-center items-center h-8 w-8 bg-white rounded-lg absolute top-0 right-0 m-3"
           >
             <span class="text-lg text-dGray"><i class="fa fa-times"></i></span>
@@ -686,38 +763,35 @@
       var hamburger = document.querySelector(".hamburger");
       var darkBG = document.querySelector("#darkBG");
       var mNav = document.querySelector("#mNav");
-      // On click
+
       hamburger.addEventListener("click", function () {
-        // Toggle class "is-active"
         hamburger.classList.toggle("is-active");
         darkBG.classList.toggle("opacity-0");
         darkBG.classList.toggle("pointer-events-none");
         mNav.classList.toggle("-translate-x-full");
       });
 
-      darkBG.addEventListener("click", () => {
+      function hide() {
         hamburger.classList.remove("is-active");
         darkBG.classList.add("opacity-0");
         darkBG.classList.add("pointer-events-none");
         mNav.classList.add("-translate-x-full");
-      });
+        login.classList.add("opacity-0");
+        login.classList.add("pointer-events-none");
+        hamburger.classList.remove("pointer-events-none");
+      }
 
-      var lBG = document.querySelector("#loginBG");
       var login = document.querySelector("#login");
 
       //Login
       function loginShow() {
-        lBG.classList.remove("opacity-0");
-        lBG.classList.remove("pointer-events-none");
+        darkBG.classList.remove("opacity-0");
+        darkBG.classList.remove("pointer-events-none");
         login.classList.remove("opacity-0");
         login.classList.remove("pointer-events-none");
-      }
-
-      function loginHide() {
-        lBG.classList.add("opacity-0");
-        lBG.classList.add("pointer-events-none");
-        login.classList.add("opacity-0");
-        login.classList.add("pointer-events-none");
+        hamburger.classList.toggle("pointer-events-none");
+        hamburger.classList.remove("is-active");
+        mNav.classList.add("-translate-x-full");
       }
 
       //Nav Expands
@@ -732,6 +806,22 @@
       function vtEShow() {
         vtExp.classList.toggle("hidden");
         rExp.classList.add("hidden");
+      }
+
+      //Search
+      var body = document.querySelector("body");
+      var searchO = document.querySelector("#searchOverlay");
+
+      function Search() {
+        body.classList.add("overflow-hidden");
+        searchO.classList.add("block");
+        searchO.classList.remove("hidden");
+      }
+
+      function hideS() {
+        body.classList.remove("overflow-hidden");
+        searchO.classList.remove("block");
+        searchO.classList.add("hidden");
       }
     </script>
     <script src="./assets/js/siema.min.js"></script>
